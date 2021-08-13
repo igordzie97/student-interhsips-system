@@ -1,1 +1,1 @@
-# student-interhsips-system
+# System supporting student internships
