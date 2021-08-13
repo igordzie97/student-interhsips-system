@@ -1,1 +1,3 @@
-# System supporting student internships
+# System wspomagający obsługę praktyk studenckich
+Celem pracy inżynierskiej było zaprojektowanie i implementacja systemu wspomagającego obsługę procedury zaliczenia praktyk przez studentów. 
+Głównym założeniem systemu jest maksymalne uproszczenie procesu i jego cyfryzacja. System będzie umożliwiać między innymi rejestrację studentów, dodawanie firm organizujących praktykę, dodawanie dokumentów, zatwierdzanie dokumentów przez opiekunów ze strony firmy i uczelni. Zintegrowany system komunikacji będzie umożliwiał szybki kontakt opiekuna praktyk ze studentem w nagłych sprawach, na przykład: uzupełnienie dokumentów lub ich korekta.
