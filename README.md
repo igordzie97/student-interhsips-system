@@ -93,3 +93,8 @@ Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców
 - [Procesowa](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
 - [Deweloperska](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-deweloperska.pdf)
 - [Użytkownika](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-użytkownika.pdf)
+
+## Autorzy:
+- Igor Dzierwa
+- Adrian Nędza
+- Konrad Makuch
