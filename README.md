@@ -64,7 +64,7 @@ Zależności z pliku pom.xml:
 
 ## Baza danych
 
-### Konfiguracja bazy danych z pliku application.properties: 
+Konfiguracja bazy danych z pliku application.properties: 
 
 <img width="800" alt="Screen Shot 2021-08-23 at 00 14 31 AM" src="https://user-images.githubusercontent.com/34041060/130371689-40e3d893-2c16-447d-a9f3-087011103e9c.png">
 
