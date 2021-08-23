@@ -1,4 +1,14 @@
 # System wspomagający obsługę praktyk studenckich
+
+# Spis Treści
+1. [Opis](#opis)
+2. [Technologie i architektura systemu](#technologie-i-architektura-systemu)
+  - [Backend](#backend)
+  - [Baza danych](#baza-danych)
+  - [Frontend](#frontend)
+3. [Dokumentcja](#dokumentacja)
+
+# Opis
 Celem pracy inżynierskiej było zaprojektowanie i implementacja systemu wspomagającego obsługę procedury zaliczenia praktyk przez studentów. 
 Założeniem systemu jest maksymalne uproszczenie procesu i jego cyfryzacja. 
 
@@ -78,10 +88,8 @@ Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców
 - https://localhost:8080
 
 # Dokumentacja
-- Koncepcyjna
-- Specyfikacyjna
-- Procesowa
-- Deweloperska
-- Użytkownika
-
-
+- [Koncepcyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
+- [Specyfikacyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
+- [Procesowa](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
+- [Deweloperska](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-deweloperska.pdf)
+- [Użytkownika](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-użytkownika.pdf)
