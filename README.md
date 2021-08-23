@@ -1,6 +1,6 @@
 # System wspomagający obsługę praktyk studenckich
 
-# Spis Treści
+## Spis Treści
 1. [Opis](#opis)
 2. [Technologie i architektura systemu](#technologie-i-architektura-systemu)
   - [Backend](#backend)
@@ -8,7 +8,7 @@
   - [Frontend](#frontend)
 3. [Dokumentcja](#dokumentacja)
 
-# Opis
+## Opis
 Celem pracy inżynierskiej było zaprojektowanie i implementacja systemu wspomagającego obsługę procedury zaliczenia praktyk przez studentów. 
 Założeniem systemu jest maksymalne uproszczenie procesu i jego cyfryzacja. 
 
@@ -19,7 +19,7 @@ System, jako aplikacja webowa, umożliwia między innymi:
 - zatwierdzanie dokumentów przez opiekunów ze strony firmy i uczelni. 
 - zintegrowany system komunikacji umożliwia szybki kontakt opiekuna praktyk ze studentem
 
-# Technologie i architektura systemu
+## Technologie i architektura systemu
 - **Java 11 + Spring Boot** - backend
 - **Vue.js 3.0** - frontend
 - **MySQL** - relacyjny system do zarządzania bazą danych
@@ -87,7 +87,7 @@ Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców
 ### Adres
 - https://localhost:8080
 
-# Dokumentacja
+## Dokumentacja
 - [Koncepcyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
 - [Specyfikacyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
 - [Procesowa](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
