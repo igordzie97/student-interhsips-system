@@ -75,7 +75,8 @@ Konfiguracja bazy danych z pliku application.properties:
 ## Frontend
 Do komunikacji z serwerem została wykorzystana biblioteka **axios**, będąca klientem HTTP, który jednoznacznie określa sposób wymiany informacji oraz współpracy.
 
-W aspekcie wizualnym została wykorzystana bilbioteka komponentów dla Vue.js w wersji 3.0, Element Plus: https://element-plus.org/#/en-US
+W aspekcie wizualnym została wykorzystana bilbioteka komponentów dla Vue.js w wersji 3.0, Element Plus: 
+- https://element-plus.org/#/en-US
 
 Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców Node.js - Npm. 
 
