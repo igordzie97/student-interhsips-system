@@ -10,7 +10,6 @@ System, jako aplikacja webowa, umożliwia między innymi:
 - zintegrowany system komunikacji umożliwia szybki kontakt opiekuna praktyk ze studentem
 
 # Technologie i architektura systemu
-## Stos technologiczny:
 - **Java 11 + Spring Boot** - backend
 - **Vue.js 3.0** - frontend
 - **MySQL** - relacyjny system do zarządzania bazą danych
@@ -77,3 +76,12 @@ Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców
 
 ### Adres
 - https://localhost:8080
+
+# Dokumentacja
+- Koncepcyjna
+- Specyfikacyjna
+- Procesowa
+- Deweloperska
+- Użytkownika
+
+
