@@ -49,6 +49,10 @@ Zależności z pliku pom.xml:
 
 <img width="300" alt="Screen Shot 2021-08-23 at 00 55 47 AM" src="https://user-images.githubusercontent.com/34041060/130372630-4725e7a6-ed2e-406e-9798-117f4c284660.png">
 
+### Adres
+-  http://localhost:9090
+-  **Swagger:** http://localhost:9090/swagger-ui/index.html#/
+
 ## Baza danych
 
 ### Konfiguracja bazy danych z pliku application.properties: 
@@ -65,3 +69,11 @@ Do komunikacji z serwerem została wykorzystana biblioteka **axios**, będąca k
 W aspekcie wizualnym została wykorzystana bilbioteka komponentów dla Vue.js w wersji 3.0, Element Plus: https://element-plus.org/#/en-US
 
 Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców Node.js - Npm. 
+
+### Uruchomienie
+`npm install` - ściągnięcie wszystkich potrzebnych paczek (node_modules), które są zdefiniowane w package.json.
+
+`npm run serve` - uruchomienie aplikacji, które zwraca pod jakim adresem można otworzyć lokalny projekt.
+
+### Adres
+- https://localhost:8080
