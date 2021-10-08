@@ -1,32 +1,31 @@
-# System wspomagający obsługę praktyk studenckich
+# System supporting student internships
 
-## Spis Treści
-1. [Opis](#opis)
-2. [Technologie i architektura systemu](#technologie-i-architektura-systemu)
+## Table of Consents
+1. [Description](#opis)
+2. [Technologies and system architecture](#technologie-i-architektura-systemu)
   - [Backend](#backend)
-  - [Baza danych](#baza-danych)
+  - [Database](#baza-danych)
   - [Frontend](#frontend)
-3. [Dokumentcja](#dokumentacja)
+3. [Documentation](#dokumentacja)
 
-## Opis
-Celem pracy inżynierskiej było zaprojektowanie i implementacja systemu wspomagającego obsługę procedury zaliczenia praktyk przez studentów. 
-Założeniem systemu jest maksymalne uproszczenie procesu i jego cyfryzacja. 
+## Description
+The engineer thesis purpose was to design and implement system which will support process of student internships. The main goal is to simplifie and digitize whole process.
 
-System, jako aplikacja webowa, umożliwia między innymi: 
-- rejestrację studentów
-- dodawanie firm organizujących praktykę
-- dodawanie dokumentów
-- zatwierdzanie dokumentów przez opiekunów ze strony firmy i uczelni. 
-- zintegrowany system komunikacji umożliwia szybki kontakt opiekuna praktyk ze studentem
+System as Web Application, allows
+- registration of the students
+- adding companies that organise internships 
+- adding documents
+- approving documents by companies and universities supervisors
+- communicating with integrated communication system
 
-## Technologie i architektura systemu
-- **Java 11 + Spring Boot** - backend
-- **Vue.js 3.0** - frontend
-- **MySQL** - relacyjny system do zarządzania bazą danych
-- **Hibernate** - framework do mapowania obiektowo-relacyjnego (ORM)
-- **Swagger** – automatyczna dokumentacja metod RestAPI
+## Technologies and system architecture
+- **Java 11 + Spring Boot** - Backend
+- **Vue.js 3.0** - Frontend
+- **MySQL** - Relational Database Management System
+- **Hibernate** - Object-Relational Mapping framework
+- **Swagger** – Automated documentation for describing RESTful APIs (expressed using JSON)
 
-<img width="600" alt="Screen Shot 2021-08-23 at 00 11 15 AM" src="https://user-images.githubusercontent.com/34041060/130371599-3721aee0-691e-450d-9d4a-f8d4db3220aa.png">
+<img width="900" alt="Screen Shot 2021-10-09 at 00 55 35 AM" src="https://user-images.githubusercontent.com/34041060/136632722-f6ed5408-2462-434d-bbaf-05d9d6d1cd29.png">
 
 ## Backend
 Api oparte na stylu architektonicznym **REST**. Jako formę autoryzacji oraz autentyfikacji został wybrany mechanizm **JWT**.
@@ -88,7 +87,7 @@ Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców
 ### Adres
 - https://localhost:8080
 
-## Dokumentacja
+## Documentation
 - [Koncepcyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
 - [Specyfikacyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
 - [Procesowa](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
