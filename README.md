@@ -1,17 +1,18 @@
-# System supporting student internships
+# System Supporting Student Internships
 
 ## Table of Consents
-1. [Description](#opis)
-2. [Technologies and system architecture](#technologie-i-architektura-systemu)
+1. [Description](#description)
+2. [Technologies and system architecture](#technologies-and-system-architecture)
   - [Backend](#backend)
-  - [Database](#baza-danych)
+  - [Database](#database)
   - [Frontend](#frontend)
-3. [Documentation](#dokumentacja)
+3. [Addresses](#addresses)
+4. [Documentation](#documentation)
 
 ## Description
 The engineer thesis purpose was to design and implement system which will support process of student internships. The main goal is to simplifie and digitize whole process.
 
-System as Web Application, allows
+System as Web Application, allows:
 - registration of the students
 - adding companies that organise internships 
 - adding documents
@@ -28,73 +29,140 @@ System as Web Application, allows
 <img width="900" alt="Screen Shot 2021-10-09 at 00 55 35 AM" src="https://user-images.githubusercontent.com/34041060/136632722-f6ed5408-2462-434d-bbaf-05d9d6d1cd29.png">
 
 ## Backend
-Api oparte na stylu architektonicznym **REST**. Jako formę autoryzacji oraz autentyfikacji został wybrany mechanizm **JWT**.
+API based on REST architectural style.
 
-### Najważniejsze zależności z pliku pom.xml:
-- **spring-boot-starter-web** - narzędzia nezbędne do tworzenia aplikacji webowej.
-- **spring-boot-starter-data-jpa** - warstwa abstrakcji nad bazą danych.
-- **mysql-connector-java** - sterownik JDBC dla MySQL.
-- **spring-boot-starter-security** - zbiór narzędzi do zabezpieczenia aplikacji (między innymi mechanizm JWT).
+JWT mechanism is used for authorization and autentification:
+- At the begining client sends HTTP request (POST) with login and password.
+- If credentials are correct - server generates JWT token with encoded user role and sends it to the client.
+- Client saves the token and attaches it in every request as Authorization header.
+
+### Most important dependencies from pom.xml:
+- `spring-boot-starter-web` - tools essential for creating web app.
+- `mysql-connector-java` - JDBC driver for MySQL.
+- `spring-boot-starter-data-jpa` - connecting application with relational database.
+- `spring-boot-starter-security` - set of tools for application security (for example: JWT mechanism).
 
 ### Swagger
-Dokumentacja API, która pozwala on na wizualizowanie zasobów serwera, które dzielone są na kontrolery.
-- znaczne przyspieszenie pracy nad serwerem
-- ułatwienie testów
-- zaoszczędzenie czasu na korzystaniu z zewnętrznych aplikacji (Postman / Insomnia)
+API documentation which helps for visualition of server resources, divided into controllers:
+- improve work efficiency
+- testing facilitation
+- saving time on using external applications (Postman / Insomnia)
 
-Zależności z pliku pom.xml:
+Dependecies from `pom.xml`:
+```xml
+<dependency>
+  <groupId>io.springfox</groupId>
+  <artifactId>springfox-boot-starter</artifactId>
+  <version>3.0.0</version>
+</dependency>
 
-<img width="300" alt="Screen Shot 2021-08-23 at 00 56 12 AM" src="https://user-images.githubusercontent.com/34041060/130372643-b7ebaec0-5fd8-45b7-8904-d0554adade24.png">
+<dependency>
+  <groupId>io.springfox</groupId>
+  <artifactId>springfox-swagger-ui</artifactId>
+  <version>3.0.0</version>
+</dependency>
+```
 
-Skonfigurowany w klasie SwaggerConfig, w wersji 3.0. Zawiera dodatkową konfigurację, gdzie przy każdym request dołączany jest wskazany wcześniej token JWT:
+Configuration is included in SwaggerConfig class. It has additional functionality to contain automatically the JWT token in each request made to API.
+```java
+@Configuration
+public class SwaggerConfig {
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.OAS_30)
+                .apiInfo(apiInfo())
+                .securityContexts(Arrays.asList(securityContext()))
+                .securitySchemes(Arrays.asList(apiKey()))
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("agh.studentInternshipSupportSystem"))
+                .paths(PathSelectors.any())
+                .build();
+    }
 
-<img width="650" alt="Screen Shot 2021-08-23 at 00 46 53 AM" src="https://user-images.githubusercontent.com/34041060/130372433-9fb81c08-9212-4f49-8ca8-fec2d111e299.png">
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("The system supporting student internships")
+                .build();
+    }
+
+    private ApiKey apiKey() {
+        return new ApiKey("Authorization", "Authorization", "header");
+    }
+
+    private SecurityContext securityContext() {
+        return SecurityContext.builder().securityReferences(defaultAuth()).build();
+    }
+
+    private List<SecurityReference> defaultAuth() {
+        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        return Arrays.asList(new SecurityReference("Authorization", authorizationScopes));
+    }
+
+}
+```
 
 ### Project Lombok
-Biblioteka Javy, która w znaczącym stopniu ułatwia definiowanie klas. Znacząco skraca kod poprzez zastąpienie getterów, setterów, czy konstruktorów za pomocą adnotacji.
+Java library which automatically plugs into your editor and build tools. It replaces boilerplate code with easy to use annotations (constructors, getters, setters etc.).
 
-Zależności z pliku pom.xml:
+Dependencies from `pom.xml` file:
+```xml
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <optional>true</optional>
+</dependency>
+```
 
-<img width="300" alt="Screen Shot 2021-08-23 at 00 55 47 AM" src="https://user-images.githubusercontent.com/34041060/130372630-4725e7a6-ed2e-406e-9798-117f4c284660.png">
+## Database
+Dependencies from `pom.xml` file:
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
 
-### Adres
--  http://localhost:9090
--  **Swagger:** http://localhost:9090/swagger-ui/index.html#/
+<dependency>
+  <groupId>mysql</groupId>
+  <artifactId>mysql-connector-java</artifactId>
+  <scope>runtime</scope>
+</dependency>
+```
 
-## Baza danych
-
-Konfiguracja bazy danych z pliku application.properties: 
-
-<img width="800" alt="Screen Shot 2021-08-23 at 00 14 31 AM" src="https://user-images.githubusercontent.com/34041060/130371689-40e3d893-2c16-447d-a9f3-087011103e9c.png">
-
-- **Nazwa bazy danych**: db_studentIntershipSupport
-- **Nazwa użytkownika:** springuser
-- **Hasło użytkownika:** ThePassword
+Configuration file which is supported by Spring Boot - `application.properties`:
+```properties
+server.port = 9090
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_studentIntershipSupport?serverTimezone=UTC
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+```
 
 ## Frontend
-Do komunikacji z serwerem została wykorzystana biblioteka **axios**, będąca klientem HTTP, który jednoznacznie określa sposób wymiany informacji oraz współpracy.
+Axios library is used for communication with server - as a HTTP client, unambiguously defines the way of information exchange.
 
-W aspekcie wizualnym została wykorzystana bilbioteka komponentów dla Vue.js w wersji 3.0, Element Plus: 
-- https://element-plus.org/#/en-US
+From UI perspective - it is used one of the most common components library for Vue.js 3.0, [Element Plus](https://element-plus.org/#/en-US).
 
-Jako menadżer pakietów została wykorzystana oficjalna propozycja od twórców Node.js - Npm. 
+### Setting up
+`npm install` - installing all modules which are defined in package.json.
 
-### Uruchomienie
-`npm install` - ściągnięcie wszystkich potrzebnych paczek (node_modules), które są zdefiniowane w package.json.
+`npm run serve` - launching the application (returns what is the local address).
 
-`npm run serve` - uruchomienie aplikacji, które zwraca pod jakim adresem można otworzyć lokalny projekt.
-
-### Adres
-- https://localhost:8080
+### Addresses
+- **Backend:** http://localhost:9090
+- **Swagger:** http://localhost:9090/swagger-ui/index.html#/
+- **Frontend:** https://localhost:8080
 
 ## Documentation
-- [Koncepcyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
-- [Specyfikacyjna](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
-- [Procesowa](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
-- [Deweloperska](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-deweloperska.pdf)
-- [Użytkownika](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-użytkownika.pdf)
+General documentation in Polish:
+- [Design documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
+- [Specification documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
+- [Process documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
+- [Development documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-deweloperska.pdf)
+- [User documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-użytkownika.pdf)
 
-## Autorzy:
+## Authors:
 - Igor Dzierwa
 - Adrian Nędza
 - Konrad Makuch
