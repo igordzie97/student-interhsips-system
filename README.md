@@ -156,11 +156,11 @@ From UI perspective - it is used one of the most common components library for V
 
 ## Documentation
 General documentation in Polish:
-- [Design documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-koncepcyjna.pdf)
-- [Specification documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-specyfikacyjna.pdf)
-- [Process documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-procesowa.pdf)
-- [Development documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-deweloperska.pdf)
-- [User documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/dok-użytkownika.pdf)
+- [Design documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/doc-design.pdf)
+- [Specification documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/doc-specification.pdf)
+- [Process documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/doc-process.pdf)
+- [Development documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/doc-development.pdf)
+- [User documentation](https://github.com/igordzie97/student-interhsips-system/blob/main/documentation/doc-user.pdf)
 
 ## Authors:
 - Igor Dzierwa
