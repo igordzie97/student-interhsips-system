@@ -10,7 +10,7 @@
 4. [Documentation](#documentation)
 
 ## Description
-The engineer thesis purpose was to design and implement system which will support process of student internships. The main goal is to simplifie and digitize whole process.
+The engineer thesis purpose is to design and implement system which will support process of student internships. The main goal of the system is to simplifie and digitize whole process.
 
 System as Web Application, allows:
 - registration of the students
